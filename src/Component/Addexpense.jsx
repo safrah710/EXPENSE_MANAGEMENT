@@ -29,7 +29,7 @@ function AddExpense() {
       return;
     }
     try{
-      let res=await axios.post('https://dashboard.render.com/exp/add',{
+      let res=await axios.post('https://expense-management-15ro.onrender.com/exp/add',{
         name,expenseName,expenseType,amount,month,year
       })
       if(res.status===200){
