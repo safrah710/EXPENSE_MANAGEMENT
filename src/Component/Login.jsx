@@ -11,7 +11,7 @@ function Login() {
     let navigate=useNavigate();
     const login=async()=>{
         try{
-            let res=await axios.post('https://dashboard.render.com/user/login',{email,password})
+            let res=await axios.post('https://expense-management-15ro.onrender.com/user/login',{email,password})
             if(res.status===200){
                 toast.success("Logged successfull");
                 sessionStorage.setItem('token',res.data.token);
