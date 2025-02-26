@@ -28,7 +28,7 @@ const Overview = () => {
         const get3 = async () => {
             try {
                 let params = { name: name, year: selectedYear, month: selectedMonth };
-                let res = await axios.get('https://dashboard.render.com/exp/get3', { params });
+                let res = await axios.get('https://expense-management-15ro.onrender.com/exp/get3', { params });
         
                 if (res.status === 200) {
                     const formattedExpenses = res.data.data.map(exp => ({
@@ -45,7 +45,7 @@ const Overview = () => {
             try {
                 let params = { name: type };
                 console.log(type);
-                let res = await axios.get('https://dashboard.render.com/exp/get4', { params });
+                let res = await axios.get('https://expense-management-15ro.onrender.com/exp/get4', { params });
         
                 if (res.status === 200) {
                     setExpenses1(res.data.data);
