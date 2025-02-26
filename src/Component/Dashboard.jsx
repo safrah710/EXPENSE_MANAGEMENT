@@ -21,7 +21,7 @@ function Dashboard() {
 
     const get = async () => {
         try {
-            let res = await axios.get('https://dashboard.render.com/exp/get1', { params: { name } });
+            let res = await axios.get('https://expense-management-15ro.onrender.com/exp/get1', { params: { name } });
             if (res.status === 200) {
                 let total = res.data.data.reduce((acc, item) => acc + parseInt(item.amount), 0);
                 setSum(total);
@@ -34,7 +34,7 @@ function Dashboard() {
     const get1 = async () => {
         try {
             let params = { name: name, year: selectedYear, month: selectedMonth };
-            let res = await axios.get('https://dashboard.render.com/exp/get2', { params });
+            let res = await axios.get('https://expense-management-15ro.onrender.com/exp/get2', { params });
             if (res.status === 200) {
                 let total = res.data.data.reduce((acc, item) => acc + parseInt(item.amount), 0);
                 setSubsum(total);
@@ -46,7 +46,7 @@ function Dashboard() {
 
     const deleteExpenses = async () => {
         try {
-            let res = await axios.delete('https://dashboard.render.com/exp/delete2', { params: { name } });
+            let res = await axios.delete('https://expense-management-15ro.onrender.com/exp/delete2', { params: { name } });
             if (res.status === 200) {
                 toast.success("Expenses deleted successfully");
                 get();
