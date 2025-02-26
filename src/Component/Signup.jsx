@@ -49,7 +49,7 @@ function Signup() {
       return;
     }
     try {
-      let res = await axios.post('https://dashboard.render.com/user/signup', {
+      let res = await axios.post('https://expense-management-15ro.onrender.com/user/signup', {
         name, email, password, con_pass, phone, age, state
       });
   
