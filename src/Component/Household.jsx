@@ -37,10 +37,11 @@ function Household() {
     const handleDelete = async (name1) => {
         const params1 = { expenseName: name1 };
         try {
-            let res = await axios.delete('https://expense-management-15ro.onrender.com/exp/delete', { params: params1 });
+            let res = await axios.delete('https://expense-management-15ro.onrender.com/exp/delete1', { params: params1 });
             if (res.status === 200) {
                 toast.success("Deleted successfully");
                 setExpenses(expenses.filter(expense => expense.expenseName !== name1));
+                
             }
         } catch (err) {
             toast.error("Try again");
