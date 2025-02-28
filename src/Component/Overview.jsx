@@ -43,10 +43,9 @@ const Overview = () => {
         };
         const get4 = async (type) => {
             try {
-                let params = { name: type };
+                let params = { name1:type,name2:name};
                 console.log(type);
                 let res = await axios.get('https://expense-management-15ro.onrender.com/exp/get4', { params });
-        
                 if (res.status === 200) {
                     setExpenses1(res.data.data);
                   
