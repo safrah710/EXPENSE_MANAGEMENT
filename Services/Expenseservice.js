@@ -91,9 +91,9 @@ const add=async(req,res)=>{
     await client.connect();
     try{
         let db=client.db(dbname1);
-        let {name}=req.query;
+        let {name1,name2}=req.query;
        
-        let payload=await db.collection('expense').find({expenseType:name},{projection:{expenseName:1,amount:1}}).toArray();
+        let payload=await db.collection('expense').find({expenseType:name1,name:name2},{projection:{expenseName:1,amount:1}}).toArray();
         console.log(payload)
         res.status(200).send({
             message:"data fetched",
